@@ -79,7 +79,8 @@ state10 = {
 	"state": "Karnataka",
 }
 
-india = (state1, state2, state3, state4, state5, state6, state7, state8, state9, state10)
+# india = (state1, state2, state3, state4, state5, state6, state7, state8, state9, state10)
+india = [state1, state2, state3, state4, state5, state6, state7, state8, state9, state10]
 
 # print("States For Our Data:", len(india))
 
@@ -102,16 +103,17 @@ def filter():
 def search():
     print("Searching Covid Data")
     state_from_user = input("Enter State: ")
+    filter1 = input("Please Enter 1st Filter (active | confirmed | deaths | recovered | state)")
 
     for state in india:
         if state["state"].lower() == state_from_user.lower():
             print(state_from_user, "Found :)")
-            print("active: ", state["active"])
-            print("recovered: ", state["recovered"])
+            print(filter1, ":", state[filter1])
             break
 
 def sort():
     print("Sorting Covid Data")
+    # assignment: Use Session1M and try implementing sorting
 
 choice = "yes"
 

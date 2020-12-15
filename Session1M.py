@@ -46,3 +46,6 @@ for i in range(0, n): # 0, 1, 2, 3, 4
             data[j], data[j+1] = data[j+1], data[j]
 
 print("SORTED DATA IS:", data)
+
+sorted_data = sorted(data)
+print(sorted_data)

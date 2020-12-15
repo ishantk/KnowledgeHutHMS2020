@@ -9,7 +9,7 @@ state1 = {
 
 state2 = {
     "active": 51922,
-	"confirmed": "116752",
+	"confirmed": 116752,
 	"deaths": 5651,
 	"recovered": 59166,
 	"state": "Maharashtra",
@@ -113,7 +113,19 @@ def search():
 
 def sort():
     print("Sorting Covid Data")
-    # assignment: Use Session1M and try implementing sorting
+    sort_filter = input("Please Enter Filter for Sorting the Data (active | confirmed | deaths | recovered)")
+    n = len(india) # n is 10 here for us
+    print("Filter", sort_filter, "and n is:", n)
+
+    for i in range(0, n):  # 0, 1, 2, 3, 4 .... 9
+        for j in range(0, n - i - 1):
+            if india[j][sort_filter] > india[j+1][sort_filter]:
+                india[j], india[j + 1] = india[j + 1], india[j]
+
+    print("Sorted Data as per", sort_filter, "is: ")
+    for state in india:
+        print(state)
+
 
 choice = "yes"
 
